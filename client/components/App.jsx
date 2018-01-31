@@ -7,19 +7,20 @@ import {
   Redirect
 } from 'react-router-dom'
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// dummy object to mock the authentication login/logout
+const fakeAuth = {
+  isAuthenticated: false,
+  authenticate(cb){
+    this.isAuthenticated = true
+    setTimeout(cb, 100) //fake async login process
+  }, 
+    this.isAuthenticated = false
+    setTimeout(cb, 100)
+}
 
-// const fakeAuth = {
-//   isAuthenticated: false,
-//   //method: fake the authentication process
-//   authenticate(cb){
-//     this.isAuthenticated = true
-//     setTimeout(cb, 100) //fake async login process
-//   }, //method: fake signout process
-//     this.isAuthenticated = false //change to false
-//     setTimeout(cb, 100)
-// }
-
-//components to render once we get to those routes
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//components to render once we get to those routes: dailydashboard, and login
 // const Protected = () => <h3>Protected</h3> //show this component when authenticated, otherwise 
 // const Public = () => <h3>Public</h3> //redirect to here
 
@@ -65,28 +66,30 @@ import {
 //export default App
 //OR 
 //use export default class App extends React.Component {
-class App extends Component {
+// class App extends Component {
+export default class App extends React.Component {
   render() {
     return (
-    <div style={{textAlign: 'center'}}>
-        <h1>Hello World</h1>
-    </div>
+    
+      // <div style={{textAlign: 'center'}}>
+      //     <h1>Hello World</h1>
+      // </div>
 
-      // <Router>
-      //   <div>
-      //     <ul>
-      //       <li><Link to='/public'>Public Page</Link></li>
-      //       <li><Link to='/protected'>Protected Page</Link></li>
-      //     </ul>
+      <Router>
+        <div>
+          <ul>
+            <li><Link to='/public'>Public Page</Link></li>
+            <li><Link to='/protected'>Protected Page</Link></li>
+          </ul>
 
-      //     <Route path='/public' component={Public} />
-      //     <Route path='/login' component={Login} />
-      //     <PrivateRoute path='/protected' component={Protected} />
-      //   </div>
-      // </Router>
+          <Route path='/public' component={Public} />
+          <Route path='/login' component={Login} />
+          <PrivateRoute path='/protected' component={Protected} />
+        </div>
+      </Router>
 
-    );
+    )
   }
 }
 
-export default App;
+// export default App;
