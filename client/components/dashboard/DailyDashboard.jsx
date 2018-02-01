@@ -17,5 +17,5 @@ class DailyDashboard extends React.Component {
       )
     }
   }
-  
+
   export default DailyDashboard;
