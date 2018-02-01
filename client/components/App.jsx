@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 
 import Login from './session/Login.jsx'
-// import DailyDashboard from './dashboard/DailyDashboard.jsx'
+import DailyDashboard from './dashboard/DailyDashboard.jsx'
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // dummy object to mock the authentication login/logout
@@ -78,7 +78,7 @@ export default class App extends React.Component {
 
       <Switch>
             <Route exact path='/' component={Login} />
-            {/* <Route path='/DailyDashboard' component={DailyDashboard} /> */}
+            <Route path='/DailyDashboard' component={DailyDashboard} />
       </Switch>
     )
   }

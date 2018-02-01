@@ -1,6 +1,6 @@
 const React = require('react')
 
-class GameDate extends React.Component(props){
+class GameDate extends React.Component{
     return (
       <div className="gamedate">
         <p>1/31/18</p>
@@ -8,4 +8,4 @@ class GameDate extends React.Component(props){
     )
   }
 
-  export default GameDate;
+export default GameDate;
