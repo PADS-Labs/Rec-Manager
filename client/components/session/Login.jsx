@@ -1,20 +1,22 @@
-import './Login.css';
+const React = require('react');
+const Link = require('react-router');
+// import './Login.css';
 
-class App extends React.Component {
-    render(){
-      return (
-        <div className="app-container">
-         <div className="container">
-           <Intro />
-           <Form />
-         </div>
+class Login extends React.Component {
+  render(){
+    return (
+      <div className="app-container">
+        <div className="container">
+          <h1>Login!</h1>
+          <Intro />
+          <Form />
         </div>
-      )
-    }
+      </div>
+    )
   }
+}
   
-  /* Main Intro Component */
-  
+  // main intro component
   function Intro(props){
     return (
       <div className="intro">
@@ -23,9 +25,8 @@ class App extends React.Component {
       </div>
     )
   }
-  
-  /* Profile Image Sub Component */
-  
+
+  // profile image subcomponent
   function ProfileImage(props) {
     return(
       <div className="profile-image">
@@ -104,9 +105,5 @@ class App extends React.Component {
   
   /* Button End */
   
-  
-  ReactDOM.render(
-    <App />, document.getElementById('root')
-  );
-  
+  export default Login;
   

@@ -1,23 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//BrowserRouter, Link, Redirect
 import {
-  BrowserRouter as Router,
   Route,
-  Link,
-  Redirect
-} from 'react-router-dom'
+  Switch,
+  Router
+} from 'react-router-dom';
+
+import Login from './session/Login.jsx'
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // dummy object to mock the authentication login/logout
-const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb){
-    this.isAuthenticated = true
-    setTimeout(cb, 100) //fake async login process
-  }, 
-    this.isAuthenticated = false
-    setTimeout(cb, 100)
-}
+// const fakeAuth = {
+//   isAuthenticated: false,
+//   authenticate(cb){
+//     this.isAuthenticated = true
+//     setTimeout(cb, 100) //fake async login process
+//   }, 
+//     this.isAuthenticated = false
+//     setTimeout(cb, 100)
+// }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //components to render once we get to those routes: dailydashboard, and login
@@ -62,34 +64,19 @@ const fakeAuth = {
 //   )}
 // )
 
-//change to class App extends Component
+//App extends Component
 //export default App
 //OR 
-//use export default class App extends React.Component {
+//export default class App extends React.Component {
 // class App extends Component {
 export default class App extends React.Component {
   render() {
     return (
-    
-      // <div style={{textAlign: 'center'}}>
-      //     <h1>Hello World</h1>
-      // </div>
-
-      <Router>
-        <div>
-          <ul>
-            <li><Link to='/public'>Public Page</Link></li>
-            <li><Link to='/protected'>Protected Page</Link></li>
-          </ul>
-
-          <Route path='/public' component={Public} />
-          <Route path='/login' component={Login} />
-          <PrivateRoute path='/protected' component={Protected} />
-        </div>
-      </Router>
-
+      <Switch>
+            <Route exact path='/' component={Login} />
+            {/* <Route path='/DailyDashboard' component={DailyDashboard}/> */}
+      </Switch>
     )
   }
 }
-
 // export default App;

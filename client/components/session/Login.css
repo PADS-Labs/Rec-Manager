@@ -1,10 +1,10 @@
 /* Font - Open Sans */
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+/* @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700'); */
 
 body {
   background-color: white;
   width: 100vw;
-  font-family: 'Lato', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
   color: #aec1cc;
   letter-spacing: 0.5px;
 }
