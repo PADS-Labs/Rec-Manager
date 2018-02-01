@@ -1,0 +1,23 @@
+{
+  "name": "rec-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LazarusCrown/Rec-Manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LazarusCrown/Rec-Manager/issues"
+  },
+  "homepage": "https://github.com/LazarusCrown/Rec-Manager#readme",
+  "dependencies": {
+    "pg": "^7.4.1",
+    "postgresql": "0.0.1"
+  }
+}
