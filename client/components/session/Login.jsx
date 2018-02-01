@@ -16,12 +16,13 @@ class Login extends React.Component {
           <Intro />
           <Form />
           <Link to={'/DailyDashboard'}>DailyDashboard</Link>
+          <Link to={'/Test'}>Test</Link>
         </div>
       </div>
     )
   }
 }
-  
+
   // main intro component
   function Intro(props){
     return (
@@ -40,9 +41,9 @@ class Login extends React.Component {
       </div>
     )
   }
-  
+
   /* Intro Greeting Sub Component */
-  
+
   function IntroGreeting(props) {
     return(
       <div className="intro-greeting">
@@ -51,11 +52,11 @@ class Login extends React.Component {
        </div>
     )
   }
-  
+
   /* Intro End */
-  
+
   /* Input Fields Start */
-  
+
   function Form(props) {
     return(
       <div className="input-fields">
@@ -68,7 +69,7 @@ class Login extends React.Component {
        </div>
     )
   }
-  
+
   function Input(props){
     if(props.checkmark == "true" || props.border == "true") {
       return (
@@ -88,7 +89,7 @@ class Login extends React.Component {
       )
     }
   }
-  
+
   function emailVal(value){
     if(value.includes("@") == true){
       document.querySelector('.input-checkmark').style.color = "#33df11";
@@ -96,10 +97,10 @@ class Login extends React.Component {
       document.querySelector('.input-checkmark').style.color = "inherit";
     }
   }
-  
-  
+
+
   /* Input Fields End */
-  
+
   /* Button Start */
   function Button(props) {
     return (
@@ -108,8 +109,7 @@ class Login extends React.Component {
       </div>
     )
   }
-  
+
   /* Button End */
-  
+
   export default Login;
-  
