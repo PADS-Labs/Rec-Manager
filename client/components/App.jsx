@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import '../libs.css';
 //BrowserRouter, Link, Redirect
 import {
   Route,
@@ -8,6 +9,7 @@ import {
 } from 'react-router-dom';
 
 import Login from './session/Login.jsx'
+// import DailyDashboard from './dashboard/DailyDashboard.jsx'
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // dummy object to mock the authentication login/logout
@@ -72,9 +74,11 @@ import Login from './session/Login.jsx'
 export default class App extends React.Component {
   render() {
     return (
+      
+
       <Switch>
             <Route exact path='/' component={Login} />
-            {/* <Route path='/DailyDashboard' component={DailyDashboard}/> */}
+            {/* <Route path='/DailyDashboard' component={DailyDashboard} /> */}
       </Switch>
     )
   }
