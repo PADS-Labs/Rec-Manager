@@ -1,6 +1,6 @@
 const React = require('react');
 const Link = require('react-router');
-import './DailyDashboard.css';
+// import './DailyDashboard.css';
 
 class DailyDashboard extends React.Component {
     render() {
@@ -36,7 +36,7 @@ class DailyDashboard extends React.Component {
   function GameTime(props){
     return (
       <div className="gametime">
-        
+        <p>7:30 PM</p>
       </div>
     )
   }
@@ -44,7 +44,7 @@ class DailyDashboard extends React.Component {
   function GameLocation(props){
     return (
       <div className="gamelocation">
-        
+        <a href="#">1835 Stoner Ave. Los Angeles, CA 90025</a>
       </div>
     )
   }
@@ -52,12 +52,12 @@ class DailyDashboard extends React.Component {
   function GameOpponent(props){
     return (
       <div className="gameopponent">
-        
+        <p>Tigers</p>
       </div>
     )
   }
   
-  function GmaeResponse(props){
+  function GameResponse(props){
     return (
       <div className="gameresponse">
         <ResponseButton value="In"/>
@@ -74,8 +74,4 @@ class DailyDashboard extends React.Component {
     )
   }
   
-  // Render the App component into the #app div
-  React.render(
-    <DailyDashboard />, 
-    document.getElementById('app')
-  );
+  export default DailyDashboard;

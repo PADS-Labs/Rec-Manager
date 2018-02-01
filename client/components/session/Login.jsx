@@ -1,6 +1,9 @@
 const React = require('react');
-const Link = require('react-router');
+// const Link = require('react-router');
 // import './Login.css';
+import {
+  Link
+} from 'react-router-dom';
 
 class Login extends React.Component {
   render(){
@@ -10,6 +13,7 @@ class Login extends React.Component {
           <h1>Login!</h1>
           <Intro />
           <Form />
+          <Link to={'/DailyDashboard'}>DailyDashboard</Link>
         </div>
       </div>
     )
