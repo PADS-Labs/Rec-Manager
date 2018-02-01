@@ -5,7 +5,7 @@ html, body
   font-family: 'Lato', sans-serif
   
 body
-  // background: #333
+  background: #333
   display: flex
   justify-content: center
   align-items: center
