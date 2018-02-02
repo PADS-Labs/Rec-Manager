@@ -47,15 +47,46 @@ button
   cursor: pointer */
 
 /*****************************************************/
-  body {
+  
+body {
     font-family: sans-serif;
     font-weight: normal;
     margin: 10px;
     color: #999;
     background-color: #eee;
-  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 0.2em;
+  grid-auto-rows: minmax(100vh, auto);
+}
+
+.GameCalendar {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50% 50%;
+  /* grid-auto-rows: 100px;   */
+  grid-gap: 1em;
+}
+
+.GameDetails{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -100px 0 0 -150px;
+}
+
+p {
+  font-size: 30px;
+}
+
+a {
+  font-size: 30px;
+}
   
-  form {
+form {
     margin: 40px 0;
   }
   
@@ -72,6 +103,12 @@ button
     text-align: center;
   }
   
+  .team-logo img {
+    width: 91px;
+    border: 6px solid #e9eff3;
+    border-radius: 50%;
+  }
+
   
   #button-row{
     width: 500px;

@@ -92,7 +92,7 @@ class GameCalendar extends React.Component {
       <div style={{textAlign: 'center'}}>
         {/* <h1>Test Component</h1>
         input calendar id here */}
-        {/* <input
+        <input
           type="text"
           value={this.state.calendarUrl}
           onChange={e => this.handleChange('calendarUrl', e)}
@@ -117,7 +117,7 @@ class GameCalendar extends React.Component {
         <button onClick={()=>{this.handleOnClick('insert')}}>insert</button>
         <button onClick={()=>{this.handleOnClick('list')}}>list</button>
         <br/>
-        <br/> */}
+        <br/>
         {/* <iframe src={this.state.embedLink} style={style}></iframe> */}
         <iframe src="https://calendar.google.com/calendar/embed?src=hi3jrvh01ii47efpo7fosup6p4%40group.calendar.google.com"  style={style}></iframe>
       </div>

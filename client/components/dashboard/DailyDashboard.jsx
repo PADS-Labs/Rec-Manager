@@ -35,9 +35,14 @@ class DailyDashboard extends React.Component {
       <div>
         {/* <h1>Dashboard</h1> */}
         <div className="wrapper">
-          <GameCalendar />
-          <GameDetails />
-          <GameAttendance />
+          <div className="leftcolumn">
+            <GameCalendar className="GameCalendar"/>
+          </div>
+          <div className="rightcolumn">
+            <h1>Upcoming Game</h1>
+            <GameDetails className="GameDetails"/>
+            <GameAttendance className="GameAttendance"/>
+          </div>
         </div>
       </div>
     )

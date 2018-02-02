@@ -28,7 +28,7 @@ class Login extends React.Component {
   function Intro(props){
     return (
       <div className="intro">
-        <ProfileImage img=""  />
+        {/* <ProfileImage img=""  /> */}
         <IntroGreeting />
       </div>
     )
