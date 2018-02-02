@@ -31,24 +31,32 @@ router.post('/', (request, response, next) =>{
         )
 });
 
-// router.put('/:id', (request, response, next) => {
-//     const { id } = request.params;
-//     const { firstname, lastname, email, username, googleid, teams, administrator } = request.body;
-//     //const { firstname, lastname } = request.body;
+router.put('/:id', (request, response, next) => {
+    const { id } = request.params;
+    const { firstname, lastname, email, username, googleid, teams, administrator } = request.body;
+    const keys = ['firstname', 'lastname', 'email', 'username', 'googleid', 'teams', 'administrator']
+    const fields = [];
 
+    keys.forEach(key => {
+        if (request.body[key]) fields.push(key)
+    });
 
-//     pool.query(
-//         'UPDATE players SET firstname=($2), lastname=($3), email=($4), username=($5), googleid=($6), teams=($7), administrator=($8) WHERE id=($1)',
-//         //'UPDATE player SET firstname=($2), lastname=($3), WHERE id=($1)',
-//         [id, firstname, lastname, email, username, googleid, teams, administrator],
-//        // [id, firstname, lastname],
-//         (err, res) => {
-//             if(err) return next(err);
-            
-//             response.redirect('/');
-//         }
-//     )
-// });
+    fields.forEach((field, index) => {
+        pool.query(
+            `UPDATE player SET ${field}=($1) WHERE id=($2)`,
+           
+            [request.body[field],id],
+           
+            (err, res) => {
+                if(err) return next(err);
+                
+                if(index === fields.length - 1) response.redirect('/');
+            }
+        )
+    });
+
+   
+});
 
 
 module.exports = router; 
