@@ -12,6 +12,7 @@ app.use('/players', players);
 app.use((err, req, res, next) => {
   res.json(err);
 });
+
 app.use('/', express.static(path.join(__dirname, '/dist/')));
 
 app.get('/', (req, res) => {

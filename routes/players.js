@@ -7,7 +7,7 @@ const router = Router();
 router.get('/', (request, response, next) => {
     pool.query('SELECT * FROM player', (err, res) => {
         if (err) return next(err);
-        response.json(res.rows);
+        console.log(response.json(res.rows))
      });
 });
 
@@ -44,11 +44,11 @@ router.post('/', (request, response, next) =>{
 //        // [id, firstname, lastname],
 //         (err, res) => {
 //             if(err) return next(err);
-            
+
 //             response.redirect('/');
 //         }
 //     )
 // });
 
 
-module.exports = router; 
+module.exports = router;
