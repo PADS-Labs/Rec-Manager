@@ -12,7 +12,7 @@ import Login from './session/Login.jsx'
 import DailyDashboard from './dashboard/DailyDashboard.jsx'
 
 // test component
-import Test from './Test.jsx'
+// import Test from './Test.jsx'
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // dummy object to mock the authentication login/logout
@@ -82,7 +82,7 @@ export default class App extends React.Component {
       <Switch>
             <Route exact path='/' component={Login} />
             <Route path='/DailyDashboard' component={DailyDashboard} />
-            <Route exact path='/test' component={Test} />
+            {/* <Route exact path='/test' component={Test} /> */}
       </Switch>
     )
   }

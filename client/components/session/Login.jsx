@@ -17,7 +17,7 @@ class Login extends React.Component {
           <Intro />
           <Form />
           <Link to={'/DailyDashboard'}>DailyDashboard</Link>
-          <Link to={'/Test'}>Test</Link>
+          {/* <Link to={'/Test'}>Test</Link> */}
         </div>
       </div>
     )
