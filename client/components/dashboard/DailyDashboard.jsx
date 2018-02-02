@@ -2,7 +2,6 @@ const React = require('react');
 const Link = require('react-router');
 // import './DailyDashboard.css';
 import GameDetails from './GameDetails.jsx'
-import GameResponse from './GameResponse.jsx'
 import GameAttendance from './GameAttendance.jsx'
 
 class DailyDashboard extends React.Component {

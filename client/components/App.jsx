@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 
 import Login from './session/Login.jsx'
-// import DailyDashboard from './dashboard/DailyDashboard.jsx'
+import DailyDashboard from './dashboard/DailyDashboard.jsx'
 
 // test component
 import Test from './Test.jsx'
@@ -81,7 +81,7 @@ export default class App extends React.Component {
 
       <Switch>
             <Route exact path='/' component={Login} />
-            {/* <Route path='/DailyDashboard' component={DailyDashboard} /> */}
+            <Route path='/DailyDashboard' component={DailyDashboard} />
             <Route exact path='/test' component={Test} />
       </Switch>
     )
