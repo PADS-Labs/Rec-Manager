@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Test2 from './Test2.jsx'
+
 // hardcoded calendar id
 const calendarID = 'hi3jrvh01ii47efpo7fosup6p4@group.calendar.google.com'
 const API_KEY = 'AIzaSyCHsOVnoo1R_UG2kUe12yCwdaoBzOZSpSY'
@@ -11,7 +13,8 @@ export default class Test extends React.Component {
       teamName: '',
       date: '',
       calendarUrl: '',
-      embedLink: ''
+      embedLink: '',
+      events: []
     }
   }
   handleChange(name, event) {
@@ -28,15 +31,19 @@ export default class Test extends React.Component {
     }
 
     if (input === 'listCalendar') {
-      console.log('listing')
       fetch(`https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?key=${API_KEY}`)
       .then((res) => {
-        console.log('first promise')
         return res.json()
       })
       .then((json) => {
-        console.log('last promise')
         console.log(json)
+        json.items = json.items.filter(item => item.summary)
+        console.log('filtered', json.items)
+        json.items.sort((a,b) => {
+          return a.start.dateTime > b.start.dateTime
+        })
+        this.setState({events: json.items})
+        console.log(this.state)
       })
     }
 
@@ -74,6 +81,11 @@ export default class Test extends React.Component {
 
 
   render() {
+    const eventArray = this.state.events.map((event, index) => {
+      return (
+        <Test2 eventInfo={event} key={`event${index}`} />
+      )
+    })
     return (
       <div style={{textAlign: 'center'}}>
         <h1>Test Component</h1>
@@ -106,6 +118,8 @@ export default class Test extends React.Component {
         <br/>
         {/* <iframe src={this.state.embedLink} style={style}></iframe> */}
         <iframe src="https://calendar.google.com/calendar/embed?src=hi3jrvh01ii47efpo7fosup6p4%40group.calendar.google.com"  style={style}></iframe>
+
+        {eventArray}
       </div>
     );
   }

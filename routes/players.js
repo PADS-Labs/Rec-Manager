@@ -44,18 +44,18 @@ router.put('/:id', (request, response, next) => {
     fields.forEach((field, index) => {
         pool.query(
             `UPDATE player SET ${field}=($1) WHERE id=($2)`,
-           
+
             [request.body[field],id],
-           
+
             (err, res) => {
                 if(err) return next(err);
-                
+
                 if(index === fields.length - 1) response.redirect('/');
             }
         )
     });
 
-   
+
 });
 
 router.delete('/:id', (request, response, next) => {
@@ -69,4 +69,4 @@ router.delete('/:id', (request, response, next) => {
     )
 });
 
-module.exports = router; 
+module.exports = router;
