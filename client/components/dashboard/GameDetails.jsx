@@ -1,19 +1,12 @@
 const React = require('react')
 
-import GameDate from './GameDate.jsx'
-import GameTime from './GameTime.jsx'
-import GameLocation from './GameLocation.jsx'
-import GameOpponent from './GameOpponent.jsx'
-import GameResponse from './GameResponse.jsx'
-
 function GameDetails(props){
     return (
       <div className="gamedetails">
-        <GameDate />
-        <GameTime />
-        <GameLocation />
-        <GameOpponent />
-        <GameResponse />
+        <p>1/31/18</p>
+        <p>7:30 PM</p>
+        <a href="#">1835 Stoner Ave. Los Angeles, CA 90025</a>
+        <p>Tigers</p>
       </div>
     )
   }

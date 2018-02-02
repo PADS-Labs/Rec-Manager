@@ -1,6 +1,7 @@
 const React = require('react');
 // const Link = require('react-router');
 import './Login.css';
+
 import {
   Link
 } from 'react-router-dom';
@@ -12,11 +13,11 @@ class Login extends React.Component {
     return (
       <div className="app-container">
         <div className="container">
-          <h1>Login!</h1>
+          {/* <h1>Login!</h1> */}
           <Intro />
           <Form />
           <Link to={'/DailyDashboard'}>DailyDashboard</Link>
-          <Link to={'/Test'}>Test</Link>
+          {/* <Link to={'/Test'}>Test</Link> */}
         </div>
       </div>
     )
@@ -84,7 +85,7 @@ class Login extends React.Component {
       return (
       <div className="input no-border input-inline">
         <input type={props.type} name={props.name} placeholder={props.placeholder} />
-        <label for={props.name}>{props.label}</label>
+        <label htmlFor={props.name}>{props.label}</label>
       </div>
       )
     }

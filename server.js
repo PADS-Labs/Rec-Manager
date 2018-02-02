@@ -32,13 +32,19 @@ passport.use(new GoogleStrategy({
 ));
 
 //server setup...
+const players = require('./routes/players');
+const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const app = express();
-const server = app.listen(PORT, () =>
-  console.log(`App listening on port ${PORT}...`)
-);
+
 
 //serve static files...
+// Serve static files
+app.use(bodyParser.json());
+app.use('/players', players);
+app.use((err, req, res, next) => {
+  res.json(err);
+});
 app.use('/', express.static(path.join(__dirname, '/dist/')));
 
 //base route...
@@ -85,3 +91,6 @@ app.post('/rsvp', (req,res) => {
 // const colors = require('colors');
 // const session = require('express-session');
 
+const server = app.listen(PORT, () =>
+  console.log(`App listening on port ${PORT}...`)
+);
