@@ -1,21 +1,47 @@
 const React = require('react');
 const Link = require('react-router');
-// import './DailyDashboard.css';
+import './DailyDashboard.css';
 import GameDetails from './GameDetails.jsx'
-import GameResponse from './GameResponse.jsx'
 import GameAttendance from './GameAttendance.jsx'
+import GameCalendar from './GameCalendar.jsx'
 
 class DailyDashboard extends React.Component {
-    render() {
-      return (
-        <div>
-          <h1>Dashboard</h1>
+  
+  // constructor (props){
+  //   super(props)
+  //   this.state = {
+  //     teamName: '',
+  //     date: '',
+  //     calendarUrl: '',
+  //     embedLink: ''
+  //   }
+  // }
+
+  // componentDidMount(){
+  //   console.log('listing')
+  //     fetch(`https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?key=${API_KEY}`)
+  //     .then((res) => {
+  //       console.log('first promise')
+  //       return res.json()
+  //     })
+  //     .then((json) => {
+  //       console.log('last promise')
+  //       console.log(json)
+  //     })
+  // }
+  
+  render() {
+    return (
+      <div>
+        {/* <h1>Dashboard</h1> */}
+        <div className="wrapper">
+          <GameCalendar />
           <GameDetails />
-          <GameResponse />
           <GameAttendance />
         </div>
-      )
-    }
+      </div>
+    )
   }
-
+}
+  
   export default DailyDashboard;
