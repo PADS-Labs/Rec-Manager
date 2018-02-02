@@ -13,7 +13,7 @@ class Login extends React.Component {
     return (
       <div className="app-container">
         <div className="container">
-          <h1>Login!</h1>
+          {/* <h1>Login!</h1> */}
           <Intro />
           <Form />
           <Link to={'/DailyDashboard'}>DailyDashboard</Link>

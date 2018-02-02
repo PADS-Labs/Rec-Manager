@@ -33,10 +33,12 @@ class DailyDashboard extends React.Component {
   render() {
     return (
       <div>
-        <h1>Dashboard</h1>
-        <GameCalendar />
-        <GameDetails />
-        <GameAttendance />
+        {/* <h1>Dashboard</h1> */}
+        <div className="wrapper">
+          <GameCalendar />
+          <GameDetails />
+          <GameAttendance />
+        </div>
       </div>
     )
   }
